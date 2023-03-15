@@ -11,6 +11,8 @@ async function givePage() {
 
 async function addToCart(page) {
     await page.goto(product_url);
+    await page.waitForSelector("button[class='w_hhLG w_8nsR w_jDfj']");
+    await page.click("button[class='w_hhLG w_8nsR w_jDfj']", elem => elem.click());
 }
 
 async function checkout() {
@@ -18,4 +20,4 @@ async function checkout() {
     await addToCart(page);
 }
 
-checkout()
+checkout();
